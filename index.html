@@ -13,16 +13,18 @@
         <h1>Update CSS and variables JS</h1>
 
         <label for="spacing">Spacing</label>
-        <input type="range" name="spacing" id="spacing" min="0" max="50" value="10" class="range">
+        <input type="range" name="spacing" id="spacing" min="0" max="50" value="10" class="range" data-var="--spacing"
+            data-unit="px">
 
         <label for="blur">Blur</label>
-        <input type="range" name="blur" id="blur" class="range" min="0" max="10" value="1">
+        <input type="range" name="blur" id="blur" class="range" min="0" max="10" value="1" data-filter="blur"
+            data-unit="px">
 
         <label for="basecolor">Base Color</label>
-        <input type="color" name="basecolor" id="basecolor">
+        <input type="color" name="basecolor" id="basecolor" data-var="--baseColor">
 
         <label for="background">Background</label>
-        <input type="color" name="background" id="backColor">
+        <input type="color" name="background" id="backColor" data-var="--background">
 
         <section>
             <img src="https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA"
@@ -34,6 +36,14 @@
 <script src="script.js"></script>
 
 <style>
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+
     :root {
         --spacing: 10px;
         --baseColor: rgb(212, 212, 19);
@@ -65,14 +75,6 @@
 
     @media (max-width: 600px) {
 
-        main {
-            padding: 1rem;
-        }
-
-        h1 {
-            font-size: 1.4rem;
-        }
-
         section {
             width: 100%;
             margin: 1rem auto;
@@ -82,26 +84,10 @@
 
         img {
             width: 100%;
+            max-height: 60vh;
             height: auto;
             object-fit: cover;
-        }
-
-        label {
-            display: block;
-            margin-top: 1rem;
-            font-size: 1rem;
-        }
-
-        input[type="range"],
-        input[type="color"] {
-            width: 100%;
-            margin-top: 0.3rem;
-        }
-    }
-
-    @media (max-width: 600px) {
-        img {
-            max-height: 60vh;
+            border-radius: 6px;
         }
     }
 </style>

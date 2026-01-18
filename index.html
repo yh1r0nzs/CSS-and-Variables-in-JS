@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="import" href="https://huertatipografica.com/en/fonts/alegreya-ht-pro">
+    <title>Playing with CSS</title>
+</head>
+
+<body>
+    <main>
+        <h1>Update CSS and variables JS</h1>
+
+        <label for="spacing">Spacing</label>
+        <input type="range" name="spacing" id="spacing" min="0" max="50" value="10" class="range">
+
+        <label for="blur">Blur</label>
+        <input type="range" name="blur" id="blur" class="range" min="0" max="10" value="1">
+
+        <label for="basecolor">Base Color</label>
+        <input type="color" name="basecolor" id="basecolor">
+
+        <label for="background">Background</label>
+        <input type="color" name="background" id="backColor">
+
+        <section>
+            <img src="https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA"
+                alt="imagem-natureza" id="imagem-natureza">
+        </section>
+    </main>
+</body>
+
+<script src="script.js"></script>
+
+<style>
+    :root {
+        --spacing: 10px;
+        --baseColor: rgb(212, 212, 19);
+        --background: rgb(47, 140, 197)
+    }
+
+    html {
+        background-color: var(--background);
+        text-align: center;
+        font-size: 1.2rem;
+        font-family: alegreya;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        justify-self: center;
+        margin: 1.5rem;
+        border: solid 20px var(--baseColor);
+        padding: var(--spacing);
+        transition: all 0.3s ease;
+    }
+
+    img {
+        width: auto;
+        transition: all 0.3 s ease;
+    }
+</style>
+
+</html>

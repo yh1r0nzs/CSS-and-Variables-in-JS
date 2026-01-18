@@ -1,3 +1,6 @@
+/*
+CODIGO ANTIGO 
+
 const spacing = document.querySelector('#spacing');
 const blurIn = document.querySelector('#blur');
 const color = document.querySelector('#basecolor');
@@ -30,3 +33,25 @@ backColor.addEventListener('input', () => {
         `${backColor.value}`
     )
 })
+*/
+
+const root = document.documentElement;
+const image = document.querySelector('#imagem-natureza');
+
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('input', () => {
+
+    // CSS variable
+    if (input.dataset.var) {
+      root.style.setProperty(
+        input.dataset.var,
+        `${input.value}${input.dataset.unit || ''}`
+      );
+    }
+
+    // filtro
+    if (input.dataset.filter) {
+      image.style.filter = `${input.dataset.filter}(${input.value}${input.dataset.unit})`;
+    }
+  });
+});
